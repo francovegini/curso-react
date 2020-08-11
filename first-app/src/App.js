@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 
+/**
+ * Renderização condicional
+ */
 class App extends Component {
 
     constructor(props) {
