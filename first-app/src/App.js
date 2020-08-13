@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 
-/**
- * Renderização condicional
- */
 class App extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            feed: [
+                {id: 1, username: 'Matheus', curtidas: 10, comentarios: 2},
+                {id: 2, username: 'Lucas', curtidas: 147, comentarios: 31},
+                {id: 2, username: 'Marina', curtidas: 202, comentarios: 24}
+            ]
+        };
 
     }
 
