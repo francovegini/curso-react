@@ -4,7 +4,7 @@ import Feed from "./components/Feed";
 /**
  * Trabalhando com listas.
  */
-class App8 extends Component {
+class App extends Component {
 
     constructor(props) {
         super(props);
@@ -36,4 +36,4 @@ class App8 extends Component {
     }
 }
 
-export default App8;
+export default App;
