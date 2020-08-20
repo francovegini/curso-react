@@ -1,53 +1,65 @@
 import React, {Component} from 'react';
 
+/**
+ * Manipulando formulários
+ */
 class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            email: '',
-            password: '',
-            error: ''
-
+            form: {
+                name: 'Matheus',
+                email: 'matheus@hotmail.com',
+                passwrod: 'matheus123',
+                gender: 'MALE'
+            }
         };
 
-        this.cadastrar = this.cadastrar.bind(this);
+        this.dadosForm = this.dadosForm.bind(this);
     }
 
-    cadastrar(event) {
-        const {name, email, password} = this.state;
-
-        if (name !== '' && email !== '' && password !== '') {
-            alert(`Nome: ${name} \nEmail: ${email} \nSenha: ${password}`);
-        } else {
-            this.setState({error: 'Ops! Parece que está faltando algo!'});
-        }
-
-        // Não deixa atualizar a página
-        event.preventDefault();
+    dadosForm(e) {
+        let form = this.state.form;
+        form[e.target.name] = e.target.value;
+        this.setState({form: form})
     }
+
 
     render() {
         return (
             <div>
-                <h1>Novo usuário</h1>
-                {this.state.error && <p>{this.state.error}</p>}
-                <form onSubmit={this.cadastrar}>
-                    <label>Nome:</label>
-                    <input type="text" value={this.state.name}
-                           onChange={(e) => this.setState({name: e.target.value})}/>
-                    <br/>
-                    <label>Email:</label>
-                    <input type="text" value={this.state.email}
-                           onChange={(e) => this.setState({email: e.target.value})}/>
-                    <br/>
-                    <label>Senha:</label>
-                    <input type="password" value={this.state.password}
-                           onChange={(e) => this.setState({password: e.target.value})}/>
+                <h2>Login</h2>
+                Nome:
+                <input type="text" name="name"
+                       value={this.state.form.name}
+                       onChange={this.dadosForm}/>
+                <br/>
+                Email:
+                <input type="email" name="email"
+                       value={this.state.form.email}
+                       onChange={this.dadosForm}/>
+                <br/>
+                Senha:
+                <input type="password" name="password"
+                       value={this.state.form.password}
+                       onChange={this.dadosForm}/>
+                <br/>
+                Gender:
+                <select name="gender"
+                        value={this.state.form.gender}
+                        onChange={this.dadosForm}>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
 
-                    <button type="submit">Cadastrar</button>
-                </form>
+                <hr/>
+                <div>
+                    <h3>{this.state.form.email}</h3>
+                    <h3>{this.state.form.password}</h3>
+                    <h3>{this.state.form.gender}</h3>
+                </div>
+
             </div>
         );
     }
