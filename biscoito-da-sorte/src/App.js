@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './style.css';
+import Botao from "./components/Botao";
 
 class App extends Component {
 
@@ -36,16 +37,6 @@ class App extends Component {
                 <img src={require('./assets/biscoito.png')} className="img"/>
                 <Botao nome="Abrir biscoito" acaoBtn={this.quebraBiscoito}/>
                 <h3 className="textoFrase">{this.state.textoFrase}</h3>
-            </div>
-        );
-    }
-}
-
-class Botao extends Component {
-    render() {
-        return (
-            <div>
-                <button onClick={this.props.acaoBtn}>{this.props.nome}</button>
             </div>
         );
     }
