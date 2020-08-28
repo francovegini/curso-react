@@ -42,7 +42,7 @@ class App extends Component {
 
         let state = this.state;
         state.numero = 0;
-        state.botao = "VAI";
+        state.botaoLabel = "VAI";
         this.setState(state);
     }
 
