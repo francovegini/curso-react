@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
-
-// https://sujeitoprogramador.com/rn-api/?api=posts
+import './styles.css';
 
 class App extends Component {
 
@@ -37,8 +35,7 @@ class App extends Component {
                             <a className="botao" href="#">Acessar</a>
                         </article>
                     );
-                })}
-
+                }) }
             </div>
         );
     }
