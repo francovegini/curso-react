@@ -1,12 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
-  return (
-      <div>
+// https://sujeitoprogramador.com/rn-api/?api=posts
 
-      </div>
-  );
+class App extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            nutri: []
+        };
+    }
+
+    componentDidMount() {
+        const url = "https://sujeitoprogramador.com/rn-api/?api=posts";
+        fetch(url)
+            .then((r) => r.json())
+            .then((json) => {
+                let state = this.state;
+                state.nutri = json
+                this.setState(state);
+                console.log(json)
+            })
+    }
+
+    render() {
+        return (
+            <div className="container">
+
+                { this.state.nutri.map((item) => {
+                    return (
+                        <article key={ item.id } className="post">
+                            <strong className="titulo">{ item.titulo }</strong>
+                            <img className="capa" src={ item.capa }/>
+                            <p className="subtitulo">{ item.subtitulo }</p>
+                            <a className="botao" href="#">Acessar</a>
+                        </article>
+                    );
+                })}
+
+            </div>
+        );
+    }
 }
 
 export default App;
