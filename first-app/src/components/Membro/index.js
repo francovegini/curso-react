@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class Membro extends Component {
 
@@ -13,21 +13,21 @@ class Membro extends Component {
     }
 
     mudarNome() {
-        this.setState({nome: "Matheus"});
+        this.setState({ nome: "Matheus" });
     }
 
     sair() {
-        this.setState({nome: "Visitante"})
+        this.setState({ nome: "Visitante" })
     }
 
     render() {
         return (
             <div>
-                <h2>Bem vindo(a), {this.state.nome}</h2>
-                <button onClick={this.mudarNome}>
+                <h2>Bem vindo(a), { this.state.nome }</h2>
+                <button onClick={ this.mudarNome }>
                     Entrar como Matheus
                 </button>
-                <button onClick={this.sair}>
+                <button onClick={ this.sair }>
                     Sair
                 </button>
             </div>

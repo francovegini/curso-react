@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 /**
  * Renderização condicional
@@ -16,34 +16,34 @@ class App extends Component {
     }
 
     sair() {
-        this.setState({status: false})
+        this.setState({ status: false })
     }
 
     entrar() {
-        this.setState({status: true})
+        this.setState({ status: true })
     }
 
     render() {
         return (
             <div>
-                {/*{this.state.status === 1 &&*/}
-                {/*    <h1>Bem-vindo ao sistema!</h1>*/}
-                {/*}*/}
+                {/*{this.state.status === 1 &&*/ }
+                {/*    <h1>Bem-vindo ao sistema!</h1>*/ }
+                {/*}*/ }
 
-                {/*<div>*/}
-                {/*    <h2>Curso React JS</h2>*/}
-                {/*</div>*/}
+                {/*<div>*/ }
+                {/*    <h2>Curso React JS</h2>*/ }
+                {/*</div>*/ }
 
-                {this.state.status ?
+                { this.state.status ?
                     <div>
                         <h2> Bem-vindo ao sistema </h2>
-                        <button onClick={this.sair}>
+                        <button onClick={ this.sair }>
                             Sair do sistema
                         </button>
                     </div> :
                     <div>
                         <h2>Olá visitante, faça login!</h2>
-                        <button onClick={this.entrar}>
+                        <button onClick={ this.entrar }>
                             Entrar no sistema
                         </button>
                     </div>

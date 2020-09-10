@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class App extends Component {
 
@@ -34,9 +34,9 @@ class App extends Component {
             <div>
                 <h1>Contador</h1>
                 <h3>
-                    <button onClick={this.diminuir}>-</button>
-                    {this.state.contador}
-                    <button onClick={this.aumentar}>+</button>
+                    <button onClick={ this.diminuir }>-</button>
+                    { this.state.contador }
+                    <button onClick={ this.aumentar }>+</button>
                 </h3>
             </div>
         )

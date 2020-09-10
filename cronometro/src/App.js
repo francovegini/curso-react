@@ -35,7 +35,7 @@ class App extends Component {
     }
 
     zerar() {
-        if(this.timer !== null){
+        if (this.timer !== null) {
             clearInterval(this.timer);
             this.timer = null;
         }
@@ -53,7 +53,7 @@ class App extends Component {
                 <img src={ require('./assets/cronometro.png') } className="img"/>
                 <a className="timer">{ this.state.numero.toFixed(1) }</a>
                 <div className="areaBtn">
-                    <a className="botao" onClick={ this.vai }>{this.state.botaoLabel}</a>
+                    <a className="botao" onClick={ this.vai }>{ this.state.botaoLabel }</a>
                     <a className="botao" onClick={ this.zerar }>ZERAR</a>
                 </div>
             </div>

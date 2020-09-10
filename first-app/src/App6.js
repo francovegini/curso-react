@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Membro from "./components/Membro";
 
 class App extends Component {
