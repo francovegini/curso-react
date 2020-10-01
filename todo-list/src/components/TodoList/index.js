@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import TodoItems from "../TodoItems";
 
 class TodoList extends Component {
 
@@ -23,6 +24,7 @@ class TodoList extends Component {
             this.setState({ items: [...state.items, newItem]});
         }
 
+        this.setState({ tarefa: '' })
         e.preventDefault();
     }
 
@@ -41,8 +43,9 @@ class TodoList extends Component {
                     <button type="submit">Adicionar tarefa</button>
                 </form>
 
-                <button onClick={this.log}>Log</button>
+                <button onClick={ this.log }>Log</button>
 
+                <TodoItems lista={ this.state.items }/>
             </div>
         );
     }
