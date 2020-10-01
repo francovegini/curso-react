@@ -10,6 +10,7 @@ class TodoList extends Component {
         }
 
         this.addItem = this.addItem.bind(this);
+        this.log = this.log.bind(this);
     }
 
     addItem(e) {
@@ -25,6 +26,10 @@ class TodoList extends Component {
         e.preventDefault();
     }
 
+    log() {
+        console.log(this.state.items);
+    }
+
     render() {
         return (
             <div>
@@ -36,7 +41,8 @@ class TodoList extends Component {
                     <button type="submit">Adicionar tarefa</button>
                 </form>
 
-                {this.state.tarefa}
+                <button onClick={this.log}>Log</button>
+
             </div>
         );
     }
