@@ -12,6 +12,7 @@ class TodoList extends Component {
 
         this.addItem = this.addItem.bind(this);
         this.log = this.log.bind(this);
+        this.deleteItem = this.deleteItem.bind(this);
     }
 
     addItem(e) {
@@ -32,6 +33,14 @@ class TodoList extends Component {
         console.log(this.state.items);
     }
 
+    deleteItem(key){
+        let filter = this.state.items.filter((item) => {
+            return(item.key !== key);
+        });
+
+        this.setState({items: filter});
+    }
+
     render() {
         return (
             <div>
@@ -45,7 +54,7 @@ class TodoList extends Component {
 
                 <button onClick={ this.log }>Log</button>
 
-                <TodoItems lista={ this.state.items }/>
+                <TodoItems lista={ this.state.items } delete={this.deleteItem}/>
             </div>
         );
     }
