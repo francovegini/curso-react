@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from "react-router-dom";
+import "./home.css"
 
 class Home extends Component {
 
@@ -27,8 +29,18 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                Págima Home
+            <div className="container">
+                <div className="lista-filmes">
+                    { this.state.filmes.map((filme) => {
+                        return (
+                            <article key={ filme.id } className="filme">
+                                <strong> { filme.nome } </strong>
+                                <img src={ filme.foto } alt="capa"/>
+                                <Link>Acessar</Link>
+                            </article>
+                        )
+                    }) }
+                </div>
             </div>
         )
     }
