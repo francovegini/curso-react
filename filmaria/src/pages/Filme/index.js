@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import "./filme.css"
 
 class Filme extends Component {
 
@@ -27,8 +28,12 @@ class Filme extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Filme Único</h1>
+            <div className="filme-info">
+                <h1> { this.state.filme.nome }</h1>
+                <img src={ this.state.filme.foto }/>
+                { this.state.filme.length !== 0 &&
+                <h3>Sinopse</h3> }
+                { this.state.filme.sinopse }
             </div>
         )
     }
