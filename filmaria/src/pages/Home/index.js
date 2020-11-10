@@ -23,7 +23,6 @@ class Home extends Component {
             .then((r) => r.json())
             .then((json) => {
                 this.setState({ filmes: json });
-                console.log(json);
             })
     }
 
@@ -36,7 +35,7 @@ class Home extends Component {
                             <article key={ filme.id } className="filme">
                                 <strong> { filme.nome } </strong>
                                 <img src={ filme.foto } alt="capa"/>
-                                <Link>Acessar</Link>
+                                <Link to={ `filme/${ filme.id }` }>Acessar</Link>
                             </article>
                         )
                     }) }
