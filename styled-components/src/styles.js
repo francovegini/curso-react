@@ -20,3 +20,8 @@ export const Titulo = styled.a`
 font-size: 35px;
 color: #FFF;
 `;
+
+export const BemVindo = styled.h1`
+font-size: ${props => `${props.tamanho}px`};
+color: ${props => `#${props.cor}`};
+`;

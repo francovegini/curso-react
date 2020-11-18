@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "./App.css";
-import { Container, Head, Titulo } from "./styles";
+import { Container, Head, Titulo, BemVindo } from "./styles";
 
 class App extends Component {
   render() {
@@ -9,6 +9,10 @@ class App extends Component {
             <Head>
                 <Titulo>Projeto Styled</Titulo>
             </Head>
+
+            <BemVindo cor="00FF00" tamanho="50">
+                Bem vindo ao sistema!
+            </BemVindo>
         </Container>
     );
   }
