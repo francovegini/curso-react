@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import "./App.css";
+import { Container, Head, Titulo } from "./styles";
 
 class App extends Component {
   render() {
     return (
-        <div>
-        </div>
+        <Container>
+            <Head>
+                <Titulo>Projeto Styled</Titulo>
+            </Head>
+        </Container>
     );
   }
 }
