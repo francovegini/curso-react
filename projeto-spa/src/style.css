@@ -31,3 +31,23 @@ nav a {
     color: #FFF;
     font-weight: bold;
 }
+
+.home {
+    width: 100%;
+    height: 600px;
+    background-color: #0000ff;
+}
+
+.home h1 {
+    margin: 0;
+}
+
+.sobre {
+    width: 100%;
+    height: 600px;
+    background-color: #DDD;
+}
+
+.sobre h1 {
+    margin: 0;
+}

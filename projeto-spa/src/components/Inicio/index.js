@@ -2,7 +2,7 @@ import React from 'react';
 
 function Inicio() {
     return (
-        <div>
+        <div className="home">
             <h1>Bem-vindo a Home</h1>
             <h2>Aprendendo SPA na prática com React</h2>
             <h3>Evoluindo a cada dia!</h3>

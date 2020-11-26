@@ -1,14 +1,15 @@
 import React from 'react';
+import { HashLink as Link} from "react-router-hash-link";
 
 function Header() {
     return (
         <header>
-            <div className="menu">
+            <div className="menu" id="home">
                 <nav>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Sobre</a></li>
-                        <li><a href="#">Contato</a></li>
+                        <li><Link smooth to="#home">Home</Link></li>
+                        <li><Link smooth to="#sobre">Sobre</Link></li>
+                        <li><Link smooth to="#contato">Contato</Link></li>
                     </ul>
                 </nav>
             </div>
