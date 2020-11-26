@@ -1,9 +1,14 @@
 import React from 'react';
+import Inicio from "../Inicio";
+import Sobre from "../Sobre";
+import Contato from "../Contato";
 
 function Home() {
     return (
         <div>
-            <h1>Home</h1>
+            <Inicio/>
+            <Sobre/>
+            <Contato/>
         </div>
     );
 }
