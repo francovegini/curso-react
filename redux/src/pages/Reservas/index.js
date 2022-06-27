@@ -16,7 +16,7 @@ function Reservas() {
             <img src={reserve.image}
                  alt={reserve.title} />
             <strong>{reserve.title}</strong>
-            <span>Quantidade: 2</span>
+            <span>Quantidade: {reserve.amount}</span>
             <button
               type="button"
               onClick={() => {
