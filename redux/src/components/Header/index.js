@@ -5,7 +5,7 @@ import logo from "../../assets/logo.svg";
 import "./style.css";
 
 function App() {
-  const reserveSize = useSelector(state => state.reserve);
+  const reserveSize = useSelector(state => state.reserve.length);
 
   return (
     <header className="container">
@@ -16,7 +16,7 @@ function App() {
       <Link className="reserva" to="/reservas">
         <div>
           <strong>Minhas reservas</strong>
-          <span>{reserveSize.length} reservas</span>
+          <span>{reserveSize} reservas</span>
         </div>
       </Link>
     </header>
