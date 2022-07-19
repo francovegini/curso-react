@@ -1,5 +1,5 @@
 import React from "react";
-import { MdDelete } from "react-icons/md";
+import {MdAddCircle, MdDelete, MdRemoveCircle} from "react-icons/md";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
 import { removeReserve } from "../../store/modules/reserve/actions";
@@ -19,17 +19,27 @@ function Reservas() {
 
       {reserves.map(reserve => {
         return (
-          <div className="reservas" key={reserve.id}>
-            <img src={reserve.image}
-                 alt={reserve.title} />
-            <strong>{reserve.title}</strong>
-            <span>Quantidade: {reserve.amount}</span>
-            <button
-              type="button"
-              onClick={() => handleRemove(reserve.id)}>
-              <MdDelete size={20} color="#191919" />
-            </button>
-          </div>
+            <div className="reservas" key={reserve.id}>
+                <img src={reserve.image}
+                     alt={reserve.title}/>
+                <strong>{reserve.title}</strong>
+
+                <div id="amount">
+                    <button type="button">
+                        <MdRemoveCircle size={25} color="#191919"/>
+                    </button>
+                    <input type="text" readOnly value={reserve.amount}/>
+                    <button type="button">
+                        <MdAddCircle size={25} color="#191919"/>
+                    </button>
+                </div>
+
+                <button
+                    type="button"
+                    onClick={() => handleRemove(reserve.id)}>
+                    <MdDelete size={20} color="#191919"/>
+                </button>
+            </div>
         );
       })}
 
