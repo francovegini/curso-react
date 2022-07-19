@@ -2,7 +2,7 @@ import React from "react";
 import {MdAddCircle, MdDelete, MdRemoveCircle} from "react-icons/md";
 import "./style.css";
 import { useDispatch, useSelector } from "react-redux";
-import { removeReserve } from "../../store/modules/reserve/actions";
+import {removeReserve, updateAmountReserve} from "../../store/modules/reserve/actions";
 
 function Reservas() {
 
@@ -11,6 +11,14 @@ function Reservas() {
 
   function handleRemove(id) {
     dispatch(removeReserve(id));
+  }
+
+  function decrementAmount(trip) {
+      dispatch(updateAmountReserve(trip.id, trip.amount - 1));
+  }
+
+  function incrementAmount(trip) {
+      dispatch(updateAmountReserve(trip.id, trip.amount + 1));
   }
 
   return (
@@ -25,11 +33,11 @@ function Reservas() {
                 <strong>{reserve.title}</strong>
 
                 <div id="amount">
-                    <button type="button">
+                    <button type="button" onClick={() => decrementAmount(reserve)}>
                         <MdRemoveCircle size={25} color="#191919"/>
                     </button>
                     <input type="text" readOnly value={reserve.amount}/>
-                    <button type="button">
+                    <button type="button" onClick={() => incrementAmount(reserve)}>
                         <MdAddCircle size={25} color="#191919"/>
                     </button>
                 </div>
